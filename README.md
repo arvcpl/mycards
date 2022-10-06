@@ -10,7 +10,7 @@ Reference documentation, design & codebase for tutorial about creating Mobile iO
 
 ## Articles
 
-- [Collecting requirements, documenting, sketching & creating design](https://medium.com/@arvcpl/how-to-build-ios-mobile-app-for-non-techies-a-practical-guide-part-1-c739e44a4fca)
+- [Collecting requirements, documenting, sketching & creating design](https://medium.com/@arvcpl/how-to-build-ios-mobile-app-for-your-start-up-in-2022-a-practical-guide-part-1-5dd0b09c2bbd)
 
 ## Contacts
 
