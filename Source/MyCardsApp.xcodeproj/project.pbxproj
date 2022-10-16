@@ -1,0 +1,958 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91D563B928FBE777006A0D54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D563B828FBE777006A0D54 /* AppDelegate.swift */; };
+		91D563BB28FBE777006A0D54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D563BA28FBE777006A0D54 /* SceneDelegate.swift */; };
+		91D563C228FBE779006A0D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D563C128FBE779006A0D54 /* Assets.xcassets */; };
+		91D563C528FBE779006A0D54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91D563C328FBE779006A0D54 /* LaunchScreen.storyboard */; };
+		91D563E528FBE87C006A0D54 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563CE28FBE87C006A0D54 /* Montserrat-LightItalic.ttf */; };
+		91D563E628FBE87C006A0D54 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563CF28FBE87C006A0D54 /* Montserrat-Medium.ttf */; };
+		91D563E728FBE87C006A0D54 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D028FBE87C006A0D54 /* Montserrat-BoldItalic.ttf */; };
+		91D563E828FBE87C006A0D54 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D128FBE87C006A0D54 /* Montserrat-Light.ttf */; };
+		91D563E928FBE87C006A0D54 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D228FBE87C006A0D54 /* Montserrat-ThinItalic.ttf */; };
+		91D563EA28FBE87C006A0D54 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D328FBE87C006A0D54 /* Montserrat-ExtraLight.ttf */; };
+		91D563EB28FBE87C006A0D54 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D428FBE87C006A0D54 /* Montserrat-Thin.ttf */; };
+		91D563EC28FBE87C006A0D54 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D528FBE87C006A0D54 /* Montserrat-Bold.ttf */; };
+		91D563ED28FBE87C006A0D54 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D628FBE87C006A0D54 /* Montserrat-MediumItalic.ttf */; };
+		91D563EE28FBE87C006A0D54 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D728FBE87C006A0D54 /* Montserrat-BlackItalic.ttf */; };
+		91D563EF28FBE87C006A0D54 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D828FBE87C006A0D54 /* Montserrat-SemiBold.ttf */; };
+		91D563F028FBE87C006A0D54 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D928FBE87C006A0D54 /* Montserrat-ExtraLightItalic.ttf */; };
+		91D563F228FBE87C006A0D54 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563DB28FBE87C006A0D54 /* Montserrat-Black.ttf */; };
+		91D563F328FBE87C006A0D54 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563DC28FBE87C006A0D54 /* Montserrat-Regular.ttf */; };
+		91D563F428FBE87C006A0D54 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563DD28FBE87C006A0D54 /* Montserrat-Italic.ttf */; };
+		91D563F628FBE87C006A0D54 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563DF28FBE87C006A0D54 /* Montserrat-SemiBoldItalic.ttf */; };
+		91D563F728FBE87C006A0D54 /* card_vero.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D563E128FBE87C006A0D54 /* card_vero.png */; };
+		91D563F828FBE87C006A0D54 /* card_aciu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D563E228FBE87C006A0D54 /* card_aciu.png */; };
+		91D563F928FBE87C006A0D54 /* card_ermitazas.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D563E328FBE87C006A0D54 /* card_ermitazas.png */; };
+		91D5640128FBE8E9006A0D54 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D5640028FBE8E9006A0D54 /* WidgetKit.framework */; };
+		91D5640328FBE8E9006A0D54 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D5640228FBE8E9006A0D54 /* SwiftUI.framework */; };
+		91D5640628FBE8E9006A0D54 /* MyCardsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5640528FBE8E9006A0D54 /* MyCardsWidget.swift */; };
+		91D5640828FBE8EA006A0D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91D5640728FBE8EA006A0D54 /* Assets.xcassets */; };
+		91D5640C28FBE8EA006A0D54 /* MyCardsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 91D563FE28FBE8E9006A0D54 /* MyCardsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		91D5641228FBE9E9006A0D54 /* card_aciu.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D563E228FBE87C006A0D54 /* card_aciu.png */; };
+		91D5641328FBE9E9006A0D54 /* card_ermitazas.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D563E328FBE87C006A0D54 /* card_ermitazas.png */; };
+		91D5641428FBE9E9006A0D54 /* card_vero.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D563E128FBE87C006A0D54 /* card_vero.png */; };
+		91D5641528FBEA35006A0D54 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 91D563D528FBE87C006A0D54 /* Montserrat-Bold.ttf */; };
+		91D5641A28FBEA57006A0D54 /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5641728FBEA57006A0D54 /* UIFont+Style.swift */; };
+		91D5641B28FBEA57006A0D54 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5641828FBEA57006A0D54 /* UIColor+Style.swift */; };
+		91D5641C28FBEA57006A0D54 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5641928FBEA57006A0D54 /* Style.swift */; };
+		91D5643428FBEACA006A0D54 /* UIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5641F28FBEACA006A0D54 /* UIComposer.swift */; };
+		91D5643528FBEACA006A0D54 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642128FBEACA006A0D54 /* Binding.swift */; };
+		91D5643628FBEACA006A0D54 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642228FBEACA006A0D54 /* UIViewController+Extensions.swift */; };
+		91D5643728FBEACA006A0D54 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642328FBEACA006A0D54 /* UIView+Extensions.swift */; };
+		91D5643928FBEACA006A0D54 /* IdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642528FBEACA006A0D54 /* IdentifiableView.swift */; };
+		91D5643A28FBEACA006A0D54 /* UIBarButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642628FBEACA006A0D54 /* UIBarButton+Extensions.swift */; };
+		91D5643B28FBEACA006A0D54 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642728FBEACA006A0D54 /* UINavigationController+Extensions.swift */; };
+		91D5643C28FBEACA006A0D54 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642828FBEACA006A0D54 /* UITableView+Extensions.swift */; };
+		91D5643D28FBEACA006A0D54 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642928FBEACA006A0D54 /* UICollectionView+Extensions.swift */; };
+		91D5644128FBEACA006A0D54 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5642D28FBEACA006A0D54 /* CellController.swift */; };
+		91D5644328FBEACA006A0D54 /* NavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5643128FBEACA006A0D54 /* NavigationHeaderView.swift */; };
+		91D5644728FBEB0F006A0D54 /* UIComposer+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5644628FBEB0F006A0D54 /* UIComposer+Buttons.swift */; };
+		91D5647F28FBEC90006A0D54 /* BarcodeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5644B28FBEC8F006A0D54 /* BarcodeStyle.swift */; };
+		91D5648028FBEC90006A0D54 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5644C28FBEC90006A0D54 /* CardViewModel.swift */; };
+		91D5648128FBEC90006A0D54 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5644D28FBEC90006A0D54 /* CardView.swift */; };
+		91D5648228FBEC90006A0D54 /* BarcodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5644E28FBEC90006A0D54 /* BarcodeViewModel.swift */; };
+		91D5648328FBEC90006A0D54 /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645028FBEC90006A0D54 /* CardDetailsView.swift */; };
+		91D5648428FBEC90006A0D54 /* CardDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645228FBEC90006A0D54 /* CardDataTableViewCell.swift */; };
+		91D5648528FBEC90006A0D54 /* BarcodeDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645328FBEC90006A0D54 /* BarcodeDataTableViewCell.swift */; };
+		91D5648628FBEC90006A0D54 /* DividerDataCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645428FBEC90006A0D54 /* DividerDataCellController.swift */; };
+		91D5648728FBEC90006A0D54 /* DividerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645528FBEC90006A0D54 /* DividerViewModel.swift */; };
+		91D5648828FBEC90006A0D54 /* BarcodeDataCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645628FBEC90006A0D54 /* BarcodeDataCellController.swift */; };
+		91D5648928FBEC90006A0D54 /* CardDataCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645728FBEC90006A0D54 /* CardDataCellController.swift */; };
+		91D5648A28FBEC90006A0D54 /* DividerDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645828FBEC90006A0D54 /* DividerDataTableViewCell.swift */; };
+		91D5648B28FBEC90006A0D54 /* DataBlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645928FBEC90006A0D54 /* DataBlockViewModel.swift */; };
+		91D5648C28FBEC90006A0D54 /* CardNavigationPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645A28FBEC90006A0D54 /* CardNavigationPresentationController.swift */; };
+		91D5648D28FBEC90006A0D54 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645B28FBEC90006A0D54 /* CardDetailsViewController.swift */; };
+		91D5648E28FBEC90006A0D54 /* CardDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645C28FBEC90006A0D54 /* CardDetailsViewModel.swift */; };
+		91D5648F28FBEC90006A0D54 /* CardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645D28FBEC90006A0D54 /* CardNavigationController.swift */; };
+		91D5649028FBEC90006A0D54 /* CardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5645F28FBEC90006A0D54 /* CardCollectionCell.swift */; };
+		91D5649128FBEC90006A0D54 /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646028FBEC90006A0D54 /* CardsViewModel.swift */; };
+		91D5649228FBEC90006A0D54 /* CardsGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646128FBEC90006A0D54 /* CardsGroupViewModel.swift */; };
+		91D5649328FBEC90006A0D54 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646228FBEC90006A0D54 /* CardsViewController.swift */; };
+		91D5649428FBEC90006A0D54 /* CardsNavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646328FBEC90006A0D54 /* CardsNavigationHeaderView.swift */; };
+		91D5649528FBEC90006A0D54 /* CardsListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646428FBEC90006A0D54 /* CardsListStyle.swift */; };
+		91D5649628FBEC90006A0D54 /* CardsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646528FBEC90006A0D54 /* CardsStore.swift */; };
+		91D5649728FBEC90006A0D54 /* CardsCollectionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646628FBEC90006A0D54 /* CardsCollectionSectionHeader.swift */; };
+		91D5649828FBEC90006A0D54 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646728FBEC90006A0D54 /* CardStyle.swift */; };
+		91D5649928FBEC90006A0D54 /* BarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646828FBEC90006A0D54 /* BarcodeView.swift */; };
+		91D564AA28FC53F4006A0D54 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5644C28FBEC90006A0D54 /* CardViewModel.swift */; };
+		91D564AB28FC54C0006A0D54 /* CardsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5646528FBEC90006A0D54 /* CardsStore.swift */; };
+		91D564AC28FC552B006A0D54 /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5641728FBEA57006A0D54 /* UIFont+Style.swift */; };
+		91D564AD28FC552E006A0D54 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D5641828FBEA57006A0D54 /* UIColor+Style.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91D5640A28FBE8EA006A0D54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91D563AD28FBE777006A0D54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91D563FD28FBE8E9006A0D54;
+			remoteInfo = MyCardsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		91D5641028FBE8EA006A0D54 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				91D5640C28FBE8EA006A0D54 /* MyCardsWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		91D563B528FBE777006A0D54 /* MyCardsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCardsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D563B828FBE777006A0D54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91D563BA28FBE777006A0D54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		91D563C128FBE779006A0D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91D563C428FBE779006A0D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91D563C628FBE779006A0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91D563CC28FBE87B006A0D54 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		91D563CE28FBE87C006A0D54 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		91D563CF28FBE87C006A0D54 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		91D563D028FBE87C006A0D54 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		91D563D128FBE87C006A0D54 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		91D563D228FBE87C006A0D54 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		91D563D328FBE87C006A0D54 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		91D563D428FBE87C006A0D54 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		91D563D528FBE87C006A0D54 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		91D563D628FBE87C006A0D54 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		91D563D728FBE87C006A0D54 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		91D563D828FBE87C006A0D54 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		91D563D928FBE87C006A0D54 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		91D563DB28FBE87C006A0D54 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		91D563DC28FBE87C006A0D54 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		91D563DD28FBE87C006A0D54 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		91D563DF28FBE87C006A0D54 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		91D563E128FBE87C006A0D54 /* card_vero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_vero.png; sourceTree = "<group>"; };
+		91D563E228FBE87C006A0D54 /* card_aciu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_aciu.png; sourceTree = "<group>"; };
+		91D563E328FBE87C006A0D54 /* card_ermitazas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_ermitazas.png; sourceTree = "<group>"; };
+		91D563FE28FBE8E9006A0D54 /* MyCardsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyCardsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		91D5640028FBE8E9006A0D54 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		91D5640228FBE8E9006A0D54 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		91D5640528FBE8E9006A0D54 /* MyCardsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsWidget.swift; sourceTree = "<group>"; };
+		91D5640728FBE8EA006A0D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91D5640928FBE8EA006A0D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91D5641128FBE9BB006A0D54 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		91D5641728FBEA57006A0D54 /* UIFont+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
+		91D5641828FBEA57006A0D54 /* UIColor+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
+		91D5641928FBEA57006A0D54 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		91D5641F28FBEACA006A0D54 /* UIComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComposer.swift; sourceTree = "<group>"; };
+		91D5642128FBEACA006A0D54 /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		91D5642228FBEACA006A0D54 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		91D5642328FBEACA006A0D54 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		91D5642528FBEACA006A0D54 /* IdentifiableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableView.swift; sourceTree = "<group>"; };
+		91D5642628FBEACA006A0D54 /* UIBarButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButton+Extensions.swift"; sourceTree = "<group>"; };
+		91D5642728FBEACA006A0D54 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		91D5642828FBEACA006A0D54 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		91D5642928FBEACA006A0D54 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		91D5642D28FBEACA006A0D54 /* CellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
+		91D5643128FBEACA006A0D54 /* NavigationHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHeaderView.swift; sourceTree = "<group>"; };
+		91D5644628FBEB0F006A0D54 /* UIComposer+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIComposer+Buttons.swift"; sourceTree = "<group>"; };
+		91D5644B28FBEC8F006A0D54 /* BarcodeStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeStyle.swift; sourceTree = "<group>"; };
+		91D5644C28FBEC90006A0D54 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		91D5644D28FBEC90006A0D54 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		91D5644E28FBEC90006A0D54 /* BarcodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeViewModel.swift; sourceTree = "<group>"; };
+		91D5645028FBEC90006A0D54 /* CardDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
+		91D5645228FBEC90006A0D54 /* CardDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDataTableViewCell.swift; sourceTree = "<group>"; };
+		91D5645328FBEC90006A0D54 /* BarcodeDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeDataTableViewCell.swift; sourceTree = "<group>"; };
+		91D5645428FBEC90006A0D54 /* DividerDataCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerDataCellController.swift; sourceTree = "<group>"; };
+		91D5645528FBEC90006A0D54 /* DividerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerViewModel.swift; sourceTree = "<group>"; };
+		91D5645628FBEC90006A0D54 /* BarcodeDataCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeDataCellController.swift; sourceTree = "<group>"; };
+		91D5645728FBEC90006A0D54 /* CardDataCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDataCellController.swift; sourceTree = "<group>"; };
+		91D5645828FBEC90006A0D54 /* DividerDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerDataTableViewCell.swift; sourceTree = "<group>"; };
+		91D5645928FBEC90006A0D54 /* DataBlockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBlockViewModel.swift; sourceTree = "<group>"; };
+		91D5645A28FBEC90006A0D54 /* CardNavigationPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNavigationPresentationController.swift; sourceTree = "<group>"; };
+		91D5645B28FBEC90006A0D54 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		91D5645C28FBEC90006A0D54 /* CardDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModel.swift; sourceTree = "<group>"; };
+		91D5645D28FBEC90006A0D54 /* CardNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNavigationController.swift; sourceTree = "<group>"; };
+		91D5645F28FBEC90006A0D54 /* CardCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionCell.swift; sourceTree = "<group>"; };
+		91D5646028FBEC90006A0D54 /* CardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		91D5646128FBEC90006A0D54 /* CardsGroupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsGroupViewModel.swift; sourceTree = "<group>"; };
+		91D5646228FBEC90006A0D54 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		91D5646328FBEC90006A0D54 /* CardsNavigationHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsNavigationHeaderView.swift; sourceTree = "<group>"; };
+		91D5646428FBEC90006A0D54 /* CardsListStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListStyle.swift; sourceTree = "<group>"; };
+		91D5646528FBEC90006A0D54 /* CardsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsStore.swift; sourceTree = "<group>"; };
+		91D5646628FBEC90006A0D54 /* CardsCollectionSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCollectionSectionHeader.swift; sourceTree = "<group>"; };
+		91D5646728FBEC90006A0D54 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
+		91D5646828FBEC90006A0D54 /* BarcodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeView.swift; sourceTree = "<group>"; };
+		91D564B028FC64A6006A0D54 /* MyCardsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyCardsApp.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91D563B228FBE777006A0D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D563FB28FBE8E9006A0D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D5640328FBE8E9006A0D54 /* SwiftUI.framework in Frameworks */,
+				91D5640128FBE8E9006A0D54 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91D563AC28FBE777006A0D54 = {
+			isa = PBXGroup;
+			children = (
+				91D563B728FBE777006A0D54 /* MyCardsApp */,
+				91D5640428FBE8E9006A0D54 /* MyCardsWidget */,
+				91D563FF28FBE8E9006A0D54 /* Frameworks */,
+				91D563B628FBE777006A0D54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91D563B628FBE777006A0D54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91D563B528FBE777006A0D54 /* MyCardsApp.app */,
+				91D563FE28FBE8E9006A0D54 /* MyCardsWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91D563B728FBE777006A0D54 /* MyCardsApp */ = {
+			isa = PBXGroup;
+			children = (
+				91D564B028FC64A6006A0D54 /* MyCardsApp.entitlements */,
+				91D5641628FBEA57006A0D54 /* Style */,
+				91D5641D28FBEACA006A0D54 /* Shared */,
+				91D5644828FBEBFE006A0D54 /* Components */,
+				91D563B828FBE777006A0D54 /* AppDelegate.swift */,
+				91D563BA28FBE777006A0D54 /* SceneDelegate.swift */,
+				91D563C128FBE779006A0D54 /* Assets.xcassets */,
+				91D563C328FBE779006A0D54 /* LaunchScreen.storyboard */,
+				91D563C628FBE779006A0D54 /* Info.plist */,
+				91D563CC28FBE87B006A0D54 /* .swiftlint.yml */,
+				91D5644928FBEC1D006A0D54 /* Resources */,
+			);
+			path = MyCardsApp;
+			sourceTree = "<group>";
+		};
+		91D563CD28FBE87C006A0D54 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				91D563CE28FBE87C006A0D54 /* Montserrat-LightItalic.ttf */,
+				91D563CF28FBE87C006A0D54 /* Montserrat-Medium.ttf */,
+				91D563D028FBE87C006A0D54 /* Montserrat-BoldItalic.ttf */,
+				91D563D128FBE87C006A0D54 /* Montserrat-Light.ttf */,
+				91D563D228FBE87C006A0D54 /* Montserrat-ThinItalic.ttf */,
+				91D563D328FBE87C006A0D54 /* Montserrat-ExtraLight.ttf */,
+				91D563D428FBE87C006A0D54 /* Montserrat-Thin.ttf */,
+				91D563D528FBE87C006A0D54 /* Montserrat-Bold.ttf */,
+				91D563D628FBE87C006A0D54 /* Montserrat-MediumItalic.ttf */,
+				91D563D728FBE87C006A0D54 /* Montserrat-BlackItalic.ttf */,
+				91D563D828FBE87C006A0D54 /* Montserrat-SemiBold.ttf */,
+				91D563D928FBE87C006A0D54 /* Montserrat-ExtraLightItalic.ttf */,
+				91D563DB28FBE87C006A0D54 /* Montserrat-Black.ttf */,
+				91D563DC28FBE87C006A0D54 /* Montserrat-Regular.ttf */,
+				91D563DD28FBE87C006A0D54 /* Montserrat-Italic.ttf */,
+				91D563DF28FBE87C006A0D54 /* Montserrat-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		91D563E028FBE87C006A0D54 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				91D563E128FBE87C006A0D54 /* card_vero.png */,
+				91D563E228FBE87C006A0D54 /* card_aciu.png */,
+				91D563E328FBE87C006A0D54 /* card_ermitazas.png */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		91D563FF28FBE8E9006A0D54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91D5640028FBE8E9006A0D54 /* WidgetKit.framework */,
+				91D5640228FBE8E9006A0D54 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91D5640428FBE8E9006A0D54 /* MyCardsWidget */ = {
+			isa = PBXGroup;
+			children = (
+				91D5640528FBE8E9006A0D54 /* MyCardsWidget.swift */,
+				91D5640728FBE8EA006A0D54 /* Assets.xcassets */,
+				91D5640928FBE8EA006A0D54 /* Info.plist */,
+				91D5641128FBE9BB006A0D54 /* .swiftlint.yml */,
+			);
+			path = MyCardsWidget;
+			sourceTree = "<group>";
+		};
+		91D5641628FBEA57006A0D54 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				91D5641728FBEA57006A0D54 /* UIFont+Style.swift */,
+				91D5641828FBEA57006A0D54 /* UIColor+Style.swift */,
+				91D5641928FBEA57006A0D54 /* Style.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		91D5641D28FBEACA006A0D54 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				91D5641E28FBEACA006A0D54 /* Composers */,
+				91D5642028FBEACA006A0D54 /* Extensions+Protocols */,
+				91D5642D28FBEACA006A0D54 /* CellController.swift */,
+				91D5643028FBEACA006A0D54 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		91D5641E28FBEACA006A0D54 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				91D5641F28FBEACA006A0D54 /* UIComposer.swift */,
+				91D5644628FBEB0F006A0D54 /* UIComposer+Buttons.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
+		91D5642028FBEACA006A0D54 /* Extensions+Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				91D5642128FBEACA006A0D54 /* Binding.swift */,
+				91D5642228FBEACA006A0D54 /* UIViewController+Extensions.swift */,
+				91D5642328FBEACA006A0D54 /* UIView+Extensions.swift */,
+				91D5642528FBEACA006A0D54 /* IdentifiableView.swift */,
+				91D5642628FBEACA006A0D54 /* UIBarButton+Extensions.swift */,
+				91D5642728FBEACA006A0D54 /* UINavigationController+Extensions.swift */,
+				91D5642828FBEACA006A0D54 /* UITableView+Extensions.swift */,
+				91D5642928FBEACA006A0D54 /* UICollectionView+Extensions.swift */,
+			);
+			path = "Extensions+Protocols";
+			sourceTree = "<group>";
+		};
+		91D5643028FBEACA006A0D54 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91D5643128FBEACA006A0D54 /* NavigationHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91D5644828FBEBFE006A0D54 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				91D5644A28FBEC8F006A0D54 /* Cards */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		91D5644928FBEC1D006A0D54 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				91D563E028FBE87C006A0D54 /* Cards */,
+				91D563CD28FBE87C006A0D54 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91D5644A28FBEC8F006A0D54 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				91D5645E28FBEC90006A0D54 /* List */,
+				91D5644F28FBEC90006A0D54 /* Details */,
+				91D5644D28FBEC90006A0D54 /* CardView.swift */,
+				91D5646728FBEC90006A0D54 /* CardStyle.swift */,
+				91D5644C28FBEC90006A0D54 /* CardViewModel.swift */,
+				91D5646828FBEC90006A0D54 /* BarcodeView.swift */,
+				91D5644B28FBEC8F006A0D54 /* BarcodeStyle.swift */,
+				91D5644E28FBEC90006A0D54 /* BarcodeViewModel.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		91D5644F28FBEC90006A0D54 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				91D5645128FBEC90006A0D54 /* DataBlocks */,
+				91D5645028FBEC90006A0D54 /* CardDetailsView.swift */,
+				91D5645A28FBEC90006A0D54 /* CardNavigationPresentationController.swift */,
+				91D5645B28FBEC90006A0D54 /* CardDetailsViewController.swift */,
+				91D5645C28FBEC90006A0D54 /* CardDetailsViewModel.swift */,
+				91D5645D28FBEC90006A0D54 /* CardNavigationController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		91D5645128FBEC90006A0D54 /* DataBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				91D5645928FBEC90006A0D54 /* DataBlockViewModel.swift */,
+				91D5645728FBEC90006A0D54 /* CardDataCellController.swift */,
+				91D5645228FBEC90006A0D54 /* CardDataTableViewCell.swift */,
+				91D5645628FBEC90006A0D54 /* BarcodeDataCellController.swift */,
+				91D5645328FBEC90006A0D54 /* BarcodeDataTableViewCell.swift */,
+				91D5645428FBEC90006A0D54 /* DividerDataCellController.swift */,
+				91D5645828FBEC90006A0D54 /* DividerDataTableViewCell.swift */,
+				91D5645528FBEC90006A0D54 /* DividerViewModel.swift */,
+			);
+			path = DataBlocks;
+			sourceTree = "<group>";
+		};
+		91D5645E28FBEC90006A0D54 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				91D5646228FBEC90006A0D54 /* CardsViewController.swift */,
+				91D5646428FBEC90006A0D54 /* CardsListStyle.swift */,
+				91D5646028FBEC90006A0D54 /* CardsViewModel.swift */,
+				91D5646128FBEC90006A0D54 /* CardsGroupViewModel.swift */,
+				91D5645F28FBEC90006A0D54 /* CardCollectionCell.swift */,
+				91D5646328FBEC90006A0D54 /* CardsNavigationHeaderView.swift */,
+				91D5646628FBEC90006A0D54 /* CardsCollectionSectionHeader.swift */,
+				91D5646528FBEC90006A0D54 /* CardsStore.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91D563B428FBE777006A0D54 /* MyCardsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D563C928FBE779006A0D54 /* Build configuration list for PBXNativeTarget "MyCardsApp" */;
+			buildPhases = (
+				91D564AE28FC59BA006A0D54 /* Run Script */,
+				91D563B128FBE777006A0D54 /* Sources */,
+				91D563B228FBE777006A0D54 /* Frameworks */,
+				91D563B328FBE777006A0D54 /* Resources */,
+				91D5641028FBE8EA006A0D54 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91D5640B28FBE8EA006A0D54 /* PBXTargetDependency */,
+			);
+			name = MyCardsApp;
+			productName = MyCardsApp;
+			productReference = 91D563B528FBE777006A0D54 /* MyCardsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91D563FD28FBE8E9006A0D54 /* MyCardsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D5640D28FBE8EA006A0D54 /* Build configuration list for PBXNativeTarget "MyCardsWidgetExtension" */;
+			buildPhases = (
+				91D564AF28FC59ED006A0D54 /* Run Script */,
+				91D563FA28FBE8E9006A0D54 /* Sources */,
+				91D563FB28FBE8E9006A0D54 /* Frameworks */,
+				91D563FC28FBE8E9006A0D54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyCardsWidgetExtension;
+			productName = MyCardsWidgetExtension;
+			productReference = 91D563FE28FBE8E9006A0D54 /* MyCardsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91D563AD28FBE777006A0D54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					91D563B428FBE777006A0D54 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					91D563FD28FBE8E9006A0D54 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 91D563B028FBE777006A0D54 /* Build configuration list for PBXProject "MyCardsApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91D563AC28FBE777006A0D54;
+			productRefGroup = 91D563B628FBE777006A0D54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91D563B428FBE777006A0D54 /* MyCardsApp */,
+				91D563FD28FBE8E9006A0D54 /* MyCardsWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91D563B328FBE777006A0D54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D563EE28FBE87C006A0D54 /* Montserrat-BlackItalic.ttf in Resources */,
+				91D563ED28FBE87C006A0D54 /* Montserrat-MediumItalic.ttf in Resources */,
+				91D563E728FBE87C006A0D54 /* Montserrat-BoldItalic.ttf in Resources */,
+				91D563C528FBE779006A0D54 /* LaunchScreen.storyboard in Resources */,
+				91D563C228FBE779006A0D54 /* Assets.xcassets in Resources */,
+				91D563F328FBE87C006A0D54 /* Montserrat-Regular.ttf in Resources */,
+				91D563E828FBE87C006A0D54 /* Montserrat-Light.ttf in Resources */,
+				91D563E928FBE87C006A0D54 /* Montserrat-ThinItalic.ttf in Resources */,
+				91D563E528FBE87C006A0D54 /* Montserrat-LightItalic.ttf in Resources */,
+				91D563F728FBE87C006A0D54 /* card_vero.png in Resources */,
+				91D563F628FBE87C006A0D54 /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				91D563F928FBE87C006A0D54 /* card_ermitazas.png in Resources */,
+				91D563F028FBE87C006A0D54 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				91D563EF28FBE87C006A0D54 /* Montserrat-SemiBold.ttf in Resources */,
+				91D563EB28FBE87C006A0D54 /* Montserrat-Thin.ttf in Resources */,
+				91D563EC28FBE87C006A0D54 /* Montserrat-Bold.ttf in Resources */,
+				91D563F428FBE87C006A0D54 /* Montserrat-Italic.ttf in Resources */,
+				91D563F828FBE87C006A0D54 /* card_aciu.png in Resources */,
+				91D563E628FBE87C006A0D54 /* Montserrat-Medium.ttf in Resources */,
+				91D563EA28FBE87C006A0D54 /* Montserrat-ExtraLight.ttf in Resources */,
+				91D563F228FBE87C006A0D54 /* Montserrat-Black.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D563FC28FBE8E9006A0D54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D5641528FBEA35006A0D54 /* Montserrat-Bold.ttf in Resources */,
+				91D5640828FBE8EA006A0D54 /* Assets.xcassets in Resources */,
+				91D5641428FBE9E9006A0D54 /* card_vero.png in Resources */,
+				91D5641328FBE9E9006A0D54 /* card_ermitazas.png in Resources */,
+				91D5641228FBE9E9006A0D54 /* card_aciu.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		91D564AE28FC59BA006A0D54 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		91D564AF28FC59ED006A0D54 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91D563B128FBE777006A0D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D5648328FBEC90006A0D54 /* CardDetailsView.swift in Sources */,
+				91D5649028FBEC90006A0D54 /* CardCollectionCell.swift in Sources */,
+				91D5648D28FBEC90006A0D54 /* CardDetailsViewController.swift in Sources */,
+				91D5643C28FBEACA006A0D54 /* UITableView+Extensions.swift in Sources */,
+				91D5641B28FBEA57006A0D54 /* UIColor+Style.swift in Sources */,
+				91D5643A28FBEACA006A0D54 /* UIBarButton+Extensions.swift in Sources */,
+				91D5641C28FBEA57006A0D54 /* Style.swift in Sources */,
+				91D5648528FBEC90006A0D54 /* BarcodeDataTableViewCell.swift in Sources */,
+				91D5648928FBEC90006A0D54 /* CardDataCellController.swift in Sources */,
+				91D5649528FBEC90006A0D54 /* CardsListStyle.swift in Sources */,
+				91D5649128FBEC90006A0D54 /* CardsViewModel.swift in Sources */,
+				91D5648428FBEC90006A0D54 /* CardDataTableViewCell.swift in Sources */,
+				91D5648028FBEC90006A0D54 /* CardViewModel.swift in Sources */,
+				91D5643D28FBEACA006A0D54 /* UICollectionView+Extensions.swift in Sources */,
+				91D5643728FBEACA006A0D54 /* UIView+Extensions.swift in Sources */,
+				91D5648128FBEC90006A0D54 /* CardView.swift in Sources */,
+				91D5644328FBEACA006A0D54 /* NavigationHeaderView.swift in Sources */,
+				91D5649828FBEC90006A0D54 /* CardStyle.swift in Sources */,
+				91D5643928FBEACA006A0D54 /* IdentifiableView.swift in Sources */,
+				91D5648E28FBEC90006A0D54 /* CardDetailsViewModel.swift in Sources */,
+				91D5648728FBEC90006A0D54 /* DividerViewModel.swift in Sources */,
+				91D5649428FBEC90006A0D54 /* CardsNavigationHeaderView.swift in Sources */,
+				91D5648C28FBEC90006A0D54 /* CardNavigationPresentationController.swift in Sources */,
+				91D5649328FBEC90006A0D54 /* CardsViewController.swift in Sources */,
+				91D5643528FBEACA006A0D54 /* Binding.swift in Sources */,
+				91D5643628FBEACA006A0D54 /* UIViewController+Extensions.swift in Sources */,
+				91D5649628FBEC90006A0D54 /* CardsStore.swift in Sources */,
+				91D5648828FBEC90006A0D54 /* BarcodeDataCellController.swift in Sources */,
+				91D5648628FBEC90006A0D54 /* DividerDataCellController.swift in Sources */,
+				91D5648B28FBEC90006A0D54 /* DataBlockViewModel.swift in Sources */,
+				91D5648228FBEC90006A0D54 /* BarcodeViewModel.swift in Sources */,
+				91D5648F28FBEC90006A0D54 /* CardNavigationController.swift in Sources */,
+				91D563B928FBE777006A0D54 /* AppDelegate.swift in Sources */,
+				91D5641A28FBEA57006A0D54 /* UIFont+Style.swift in Sources */,
+				91D5649228FBEC90006A0D54 /* CardsGroupViewModel.swift in Sources */,
+				91D5648A28FBEC90006A0D54 /* DividerDataTableViewCell.swift in Sources */,
+				91D5649728FBEC90006A0D54 /* CardsCollectionSectionHeader.swift in Sources */,
+				91D5647F28FBEC90006A0D54 /* BarcodeStyle.swift in Sources */,
+				91D563BB28FBE777006A0D54 /* SceneDelegate.swift in Sources */,
+				91D5644728FBEB0F006A0D54 /* UIComposer+Buttons.swift in Sources */,
+				91D5649928FBEC90006A0D54 /* BarcodeView.swift in Sources */,
+				91D5643428FBEACA006A0D54 /* UIComposer.swift in Sources */,
+				91D5643B28FBEACA006A0D54 /* UINavigationController+Extensions.swift in Sources */,
+				91D5644128FBEACA006A0D54 /* CellController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91D563FA28FBE8E9006A0D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D564AD28FC552E006A0D54 /* UIColor+Style.swift in Sources */,
+				91D564AA28FC53F4006A0D54 /* CardViewModel.swift in Sources */,
+				91D564AB28FC54C0006A0D54 /* CardsStore.swift in Sources */,
+				91D564AC28FC552B006A0D54 /* UIFont+Style.swift in Sources */,
+				91D5640628FBE8E9006A0D54 /* MyCardsWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91D5640B28FBE8EA006A0D54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91D563FD28FBE8E9006A0D54 /* MyCardsWidgetExtension */;
+			targetProxy = 91D5640A28FBE8EA006A0D54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91D563C328FBE779006A0D54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91D563C428FBE779006A0D54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91D563C728FBE779006A0D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91D563C828FBE779006A0D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91D563CA28FBE779006A0D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyCardsApp/MyCardsApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H7XMG72DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCardsApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Cards";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "to take a photo of cards, scan barcodes and qr codes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "to use photo of cards, scan barcodes and qr codes.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.cardz.MyCardsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		91D563CB28FBE779006A0D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyCardsApp/MyCardsApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H7XMG72DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCardsApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Cards";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "to take a photo of cards, scan barcodes and qr codes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "to use photo of cards, scan barcodes and qr codes.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.cardz.MyCardsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		91D5640E28FBE8EA006A0D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H7XMG72DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCardsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Cards";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.cardz.MyCardsApp.MyCardsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91D5640F28FBE8EA006A0D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H7XMG72DD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyCardsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Cards";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.cardz.MyCardsApp.MyCardsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91D563B028FBE777006A0D54 /* Build configuration list for PBXProject "MyCardsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D563C728FBE779006A0D54 /* Debug */,
+				91D563C828FBE779006A0D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91D563C928FBE779006A0D54 /* Build configuration list for PBXNativeTarget "MyCardsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D563CA28FBE779006A0D54 /* Debug */,
+				91D563CB28FBE779006A0D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91D5640D28FBE8EA006A0D54 /* Build configuration list for PBXNativeTarget "MyCardsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91D5640E28FBE8EA006A0D54 /* Debug */,
+				91D5640F28FBE8EA006A0D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91D563AD28FBE777006A0D54 /* Project object */;
+}
