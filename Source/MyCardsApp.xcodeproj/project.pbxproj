@@ -232,7 +232,6 @@
 		91D563B728FBE777006A0D54 /* MyCardsApp */ = {
 			isa = PBXGroup;
 			children = (
-				91D564B028FC64A6006A0D54 /* MyCardsApp.entitlements */,
 				91D5641628FBEA57006A0D54 /* Style */,
 				91D5641D28FBEACA006A0D54 /* Shared */,
 				91D5644828FBEBFE006A0D54 /* Components */,
@@ -241,6 +240,7 @@
 				91D563C128FBE779006A0D54 /* Assets.xcassets */,
 				91D563C328FBE779006A0D54 /* LaunchScreen.storyboard */,
 				91D563C628FBE779006A0D54 /* Info.plist */,
+				91D564B028FC64A6006A0D54 /* MyCardsApp.entitlements */,
 				91D563CC28FBE87B006A0D54 /* .swiftlint.yml */,
 				91D5644928FBEC1D006A0D54 /* Resources */,
 			);
