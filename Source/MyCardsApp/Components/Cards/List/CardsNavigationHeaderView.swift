@@ -12,30 +12,30 @@ import UIKit
 class CardsNavigationHeaderView: UIView {
 
     private var varUpdateTasks = [VarUpdateTask]()
-    
+
     var addCardHandler: (() -> Void)?
-    
-    private lazy var headerLabel: UILabel = {
+
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = true
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.appFont(ofType: .bold, size: .viewHeader)
         label.textColor = UIColor.appText
-        label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = false
+        label.numberOfLines = 1
         label.textAlignment = .left
         return label
     }()
-    
+
     private lazy var searchField: UISearchTextField = {
         let searchField = UISearchTextField()
-        searchField.translatesAutoresizingMaskIntoConstraints = true
+        searchField.translatesAutoresizingMaskIntoConstraints = false
         searchField.textColor = UIColor.appText
         let placeholderAttributes = [NSAttributedString.Key.foregroundColor: UIColor.appSearchPlaceholder]
         searchField.attributedPlaceholder = NSAttributedString(string: "Search",
                                                                attributes: placeholderAttributes)
         searchField.font = UIFont.appFont(ofType: .regular, size: .regular)
         searchField.alpha = 0.0
-        
+
         let textChangeAction = UIAction() { _ in
             try? self.viewModel?.load(query: searchField.text)
         }
@@ -50,135 +50,165 @@ class CardsNavigationHeaderView: UIView {
         searchField.addAction(editingDidBeginAction, for: .editingDidBegin)
         return searchField
     }()
-    
+
     private lazy var cancelButton: UIButton = {
         let action = UIAction(title: "Cancel", handler: { [weak self] _ in
             self?.viewModel?.searchState = .active
         })
         let button = UIButton(primaryAction: action)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.alpha = 0.0
         button.tintColor = .appAccent
         return button
     }()
-    
+
     private lazy var addButton: UIButton = {
         let config = UIImage.SymbolConfiguration(weight: .bold)
-        
         let action = UIAction(image: UIImage(systemName: "plus.app", withConfiguration: config), handler: { [weak self] _ in
             self?.addCardHandler?()
         })
         let button = UIButton(primaryAction: action)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .appAccent
         return button
     }()
-    
+
     var viewModel: CardsViewModel?
-    
+
     var title: String? {
         didSet {
-            self.headerLabel.text = title
+            self.titleLabel.text = title
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        addButton.frame = addButtonFrame()
     }
 
     func bind() {
         unbind()
         guard let viewModel = viewModel else { return }
+
+        func handleSearchStateChange(animate: Bool = true) {
+            switch viewModel.searchState {
+            case .inactive:
+                hideSearch(animate: animate)
+                endSearch(animate: animate)
+            case .active:
+                showSearch(animate: animate)
+                endSearch(animate: animate)
+            case .searching(let initialFrame):
+                showSearch(initialFrame, animate: animate)
+                startSearch(animate: animate)
+            }
+        }
+
         varUpdateTasks.append(Task {
-            for await searchState in viewModel.$searchState.values {
-                switch searchState {
-                case .inactive:
-                    self.hideSearch()
-                    self.endSearch()
-                case .active:
-                    self.showSearch()
-                    self.endSearch()
-                case .searching(let initialFrame):
-                    self.showSearch(initialFrame)
-                    self.startSearch()
-                }
+            for await _ in viewModel.$searchState.values {
+                handleSearchStateChange()
             }
         })
+
+        handleSearchStateChange(animate: false)
     }
-    
+
     func unbind() {
         varUpdateTasks.unbind()
     }
-    
+
+    private var cancelButtonWidthConstraint = NSLayoutConstraint()
+    private var searchFieldTrailingConstraint = NSLayoutConstraint()
+
     private func configure() {
-        addSubview(headerLabel)
-        headerLabel.frame = CGRect(x: 6, y: 4, width: 200, height: 42)
-        
-        addSubview(searchField)
-       
+        addSubview(titleLabel)
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.widthAnchor.constraint(equalToConstant: 220),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
         addSubview(addButton)
-        
+        NSLayoutConstraint.activate([
+            addButton.topAnchor.constraint(equalTo: topAnchor, constant: 7),
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
+            addButton.widthAnchor.constraint(equalToConstant: 40),
+            addButton.heightAnchor.constraint(equalToConstant: elementHeight)
+        ])
+
         addSubview(cancelButton)
-        cancelButton.frame = cancelButtonFrameInactive()
+        cancelButtonWidthConstraint = cancelButton.widthAnchor.constraint(equalToConstant: cancelButtonWidthInactive)
+        NSLayoutConstraint.activate([
+            cancelButton.topAnchor.constraint(equalTo: topAnchor, constant: 7),
+            cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cancelButtonWidthConstraint,
+            cancelButton.heightAnchor.constraint(equalToConstant: elementHeight)
+        ])
+
+        addSubview(searchField)
+        NSLayoutConstraint.activate([
+            searchField.topAnchor.constraint(equalTo: topAnchor, constant: 7),
+            searchField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            searchField.trailingAnchor.constraint(equalTo: cancelButton.leadingAnchor, constant: -10),
+            searchField.heightAnchor.constraint(equalToConstant: elementHeight)
+        ])
+
     }
 }
 
 extension CardsNavigationHeaderView {
     // MARK: - State Transitions
-    private func startSearch() {
+    private func startSearch(animate: Bool = true) {
         guard addButton.alpha == 1.0 else { return }
-        UIView.animate(withDuration: 0.2, animations: {
+        cancelButtonWidthConstraint.constant = cancelButtonWidthActive
+        UIView.animate(withDuration: animate ? 0.2 : 0.0, animations: {
             self.addButton.alpha = 0.0
             self.cancelButton.alpha = 1.0
-            self.searchField.frame = self.searchFieldFrameActive()
-            self.cancelButton.frame = self.cancelButtonFrameActive()
+            self.layoutIfNeeded()
         })
     }
-    
-    private func endSearch() {
+
+    private func endSearch(animate: Bool = true) {
         guard addButton.alpha == 0.0 else { return }
         searchField.text = nil
         searchField.resignFirstResponder()
-        UIView.animate(withDuration: 0.2, animations: {
+        cancelButtonWidthConstraint.constant = cancelButtonWidthInactive
+        UIView.animate(withDuration: animate ? 0.2 : 0.0, animations: {
             self.addButton.alpha = 1.0
             self.cancelButton.alpha = 0.0
-            self.searchField.frame = self.searchFieldFrameInactive()
-            self.cancelButton.frame = self.cancelButtonFrameInactive()
+            self.layoutIfNeeded()
         })
     }
-    
-    private func showSearch(_ initialFrame: CGRect? = .none) {
+
+    private func showSearch(_ initialFrame: CGRect? = .none, animate: Bool = true) {
         guard searchField.alpha == 0 else { return }
         if let initialFrame = initialFrame {
             searchField.frame = initialFrame
             searchField.alpha = 1.0
             searchField.becomeFirstResponder()
-            UIView.animate(withDuration: 0.2, animations: {
-                self.headerLabel.alpha = 0.0
+            UIView.animate(withDuration: animate ? 0.2 : 0.0, animations: {
+                self.titleLabel.alpha = 0.0
             })
         } else {
-            searchField.frame = searchFieldFrameInactive()
-            UIView.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: animate ? 0.2 : 0.0, animations: {
                 self.searchField.alpha = 1.0
-                self.headerLabel.alpha = 0.0
+                self.titleLabel.alpha = 0.0
             })
         }
     }
-    
-    private func hideSearch() {
+
+    private func hideSearch(animate: Bool = true) {
         guard searchField.alpha == 1.0 else { return }
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: animate ? 0.2 : 0.0, animations: {
             self.searchField.alpha = 0.0
-            self.headerLabel.alpha = 1.0
+            self.titleLabel.alpha = 1.0
         })
     }
 }
@@ -188,41 +218,14 @@ extension CardsNavigationHeaderView {
     private var elementHeight: CGFloat {
         return 30
     }
-    
-    private func searchFieldFrameInactive() -> CGRect {
-        let rect = CGRect(x: 7, y: 7, width: frameWidth - 43, height: elementHeight)
-        return rect
+
+    private var cancelButtonWidthInactive: CGFloat {
+        return 20
     }
-    
-    private func searchFieldFrameActive() -> CGRect {
-        let cancelButtonFrame = cancelButtonFrameActive()
-        let width = frameWidth - cancelButtonFrame.size.width - 20
-        return CGRect(x: 7, y: 7, width: width, height: elementHeight)
-    }
-    
-    private func addButtonFrame() -> CGRect {
-        return CGRect(x: frameWidth - 40 + 10, y: 7, width: 40, height: elementHeight)
-    }
-        
-    private func cancelButtonFrameInactive() -> CGRect {
-        var originX: CGFloat {
-            return frameWidth - buttonWidth
-        }
-        
-        let buttonWidth = 40.0
-        
-        return CGRect(x: originX, y: 7, width: buttonWidth, height: elementHeight)
-    }
-    
-    private func cancelButtonFrameActive() -> CGRect {
-        var buttonWidth: CGFloat {
-            let textSize = cancelButton.sizeThatFits(CGSize(width: .infinity, height: elementHeight))
-            let buttonWidth = textSize.width + 20
-            return buttonWidth
-        }
-        
-        let originX = frameWidth - buttonWidth
-        
-        return CGRect(x: originX, y: 7, width: buttonWidth, height: elementHeight)
+
+    private var cancelButtonWidthActive: CGFloat {
+        let textSize = cancelButton.sizeThatFits(CGSize(width: .infinity, height: elementHeight))
+        let buttonWidth = textSize.width + 20
+        return buttonWidth
     }
 }
