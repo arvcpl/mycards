@@ -25,7 +25,8 @@ class CardDetailsViewController: UIViewController {
     }()
     
     private lazy var navigationHeaderView: NavigationHeaderView = {
-        let view = NavigationHeaderView(frame: CGRect(x: 0, y: 0, width: frameWidth, height: 44))
+        let view = NavigationHeaderView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.alpha = 0
         return view
     }()
@@ -105,15 +106,14 @@ class CardDetailsViewController: UIViewController {
             detailsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         detailsView.infoTableView.delegate = dataSource
+        navigationHeaderView.title = viewModel.name
+        setTitleView(navigationHeaderView)
 
         let closeButton = UIBarButtonItem(systemItem: .close, primaryAction: UIAction(handler: { [weak self] _ in
             self?.dismiss(animated: true)
         }))
-
         navigationItem.rightBarButtonItem = closeButton
-        navigationHeaderView.title = viewModel.name
-        navigationItem.titleView = navigationHeaderView
-        
+
         view.addSubview(navigationHeaderBackgroundView)
         NSLayoutConstraint.activate([
             navigationHeaderBackgroundView.topAnchor.constraint(equalTo: view.topAnchor),

@@ -10,34 +10,40 @@
 import UIKit
 
 class NavigationHeaderView: UIView {
-    private lazy var headerLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.appFont(ofType: .bold, size: .viewHeader)
         label.textColor = UIColor.appText
-        label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = false
+        label.numberOfLines = 1
         label.textAlignment = .left
         return label
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
-    
+
     @available(*, unavailable)
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     var title: String? {
         didSet {
-            self.headerLabel.text = title
+            self.titleLabel.text = title
         }
     }
-    
+
     private func configure() {
-        addSubview(headerLabel)
-        headerLabel.frame = CGRect(x: 6, y: 4, width: 200, height: 42)
+        addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.widthAnchor.constraint(equalToConstant: 220),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

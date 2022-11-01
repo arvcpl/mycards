@@ -15,14 +15,26 @@ class CardsViewController: UIViewController {
     private var varUpdateTasks = [VarUpdateTask]()
     private let searchingContentOffset = CGPoint(x: 0, y: 45)
 
+    private lazy var cardsCollectionLayout: MinHeightCollectionViewFlowLayout = {
+        return MinHeightCollectionViewFlowLayout()
+    }()
+
     private lazy var cardsCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: cardsCollectionLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
         return collectionView
     }()
-    
+
+    private lazy var placeholderView: CardsPlaceholderView = {
+        let view = CardsPlaceholderView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+
     private lazy var refreshControl: UIRefreshControl = {
         let action = UIAction(handler: { [viewModel] _ in
             try? viewModel.load()
@@ -32,7 +44,8 @@ class CardsViewController: UIViewController {
     }()
     
     private lazy var navigationHeaderView: CardsNavigationHeaderView = {
-        let view = CardsNavigationHeaderView(frame: CGRect(x: 0, y: 0, width: frameWidth, height: 44))
+        let view = CardsNavigationHeaderView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.title = "My Cards"
         return view
     }()
@@ -40,6 +53,7 @@ class CardsViewController: UIViewController {
     init(viewModel: CardsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: .none, bundle: .none)
+        cardsCollectionLayout.viewModel = viewModel
         navigationHeaderView.viewModel = viewModel
         configure()
     }
@@ -56,6 +70,11 @@ class CardsViewController: UIViewController {
         cardsCollectionView.addSubview(refreshControl)
         try? viewModel.load()
     }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        cardsCollectionLayout.minHeight = frameHeight
+    }
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -71,25 +90,45 @@ class CardsViewController: UIViewController {
     
     private func bind() {
         unbind()
+
+        func handleCardsLoadingStateChange() {
+            if viewModel.cardsLoadState == .loading {
+                refreshControl.beginRefreshing()
+            } else {
+                refreshControl.endRefreshing()
+            }
+        }
+
+        func handleCardsListChange() {
+            cardsCollectionView.reloadData()
+            if viewModel.searchState == .active || viewModel.searchState == .searching() {
+                // set content offset while switching from searching -> active
+                cardsCollectionView.setContentOffset(searchingContentOffset, animated: false)
+            }
+            if viewModel.cardsLoadState == .loaded
+                && !viewModel.isSearching
+                && viewModel.cardsGrouped.isEmpty {
+                placeholderView.isHidden = false
+                cardsCollectionView.isHidden = true
+            } else {
+                placeholderView.isHidden = true
+                cardsCollectionView.isHidden = false
+            }
+        }
+
         varUpdateTasks.append(Task {
             for await _ in viewModel.$cardsGrouped.values {
-                self.cardsCollectionView.reloadData()
-                if self.viewModel.searchState == .active {
-                    // set content offset while switching from searching -> active
-                    self.cardsCollectionView.setContentOffset(self.searchingContentOffset, animated: false)
-                }
-                //show/hide placeholder here as well
+                handleCardsListChange()
             }
         })
         varUpdateTasks.append(Task {
-            for await isCardsLoading in viewModel.$isCardsLoading.values {
-                if isCardsLoading {
-                    self.refreshControl.beginRefreshing()
-                } else {
-                    self.refreshControl.endRefreshing()
-                }
+            for await _ in viewModel.$cardsLoadState.values {
+                handleCardsLoadingStateChange()
             }
         })
+
+        handleCardsLoadingStateChange()
+        handleCardsListChange()
     }
     
     private func unbind() {
@@ -97,17 +136,34 @@ class CardsViewController: UIViewController {
     }
     
     private func configure() {
-        navigationItem.titleView = navigationHeaderView
+        setTitleView(navigationHeaderView)
         view.backgroundColor = .systemBackground
+
         view.addSubview(cardsCollectionView)
-        cardsCollectionView.dataSource = self
-        cardsCollectionView.delegate = self
         NSLayoutConstraint.activate([
             cardsCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             cardsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             cardsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             cardsCollectionView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor)
         ])
+
+        view.addSubview(placeholderView)
+        NSLayoutConstraint.activate([
+            placeholderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            placeholderView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            placeholderView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            placeholderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+
+    private class MinHeightCollectionViewFlowLayout: UICollectionViewFlowLayout {
+        var minHeight: CGFloat = 0
+        var viewModel: CardsViewModel?
+        override var collectionViewContentSize: CGSize {
+            let originalSize = super.collectionViewContentSize
+            let minHeight = viewModel?.cardsLoadState == .loaded ? self.minHeight : 0
+            return CGSize(width: originalSize.width, height: max(originalSize.height, minHeight))
+        }
     }
 }
 

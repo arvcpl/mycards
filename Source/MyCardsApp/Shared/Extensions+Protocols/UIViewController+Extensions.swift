@@ -10,21 +10,21 @@
 import UIKit
 
 extension UIViewController {
-    class func fromNib<T: UIViewController>() -> T {
-        let nibName = String(describing: T.self)
-        let viewController = UIViewController(nibName: nibName, bundle: Bundle.init(for: T.self))
-        guard let viewController = viewController as? T else {
-            fatalError("Unable load \(nibName)")
-        }
-        return viewController
-    }
-    
     var frameWidth: CGFloat {
         self.view.frame.size.width
     }
     
     var frameHeight: CGFloat {
         self.view.frame.size.height
+    }
+
+    func setTitleView(_ titleView: UIView) {
+        navigationItem.titleView = titleView
+        let headerHeightConstraint = titleView.heightAnchor.constraint(equalToConstant: 100)
+        headerHeightConstraint.priority = .defaultHigh
+        let headerWidthConstraint = titleView.widthAnchor.constraint(equalToConstant: 500)
+        headerWidthConstraint.priority = .dragThatCanResizeScene
+        NSLayoutConstraint.activate([headerHeightConstraint, headerWidthConstraint])
     }
     
     func add(_ child: UIViewController, frame: CGRect? = nil, insertAtBottom: Bool = true) {
