@@ -49,8 +49,11 @@ extension SnapshotTesting {
 
         var sourcePathComponents = URL(fileURLWithPath: "\(file)").pathComponents
 
-        if let indexFolder = sourcePathComponents.firstIndex(of: productName) {
-            sourcePathComponents[indexFolder] = ciScriptsPathComponent
+        if let indexProductFolder = sourcePathComponents.firstIndex(of: productName) {
+            sourcePathComponents[indexProductFolder] = ciScriptsPathComponent
+            if let indexRepositoryFolder = sourcePathComponents.firstIndex(of: "repository") {
+                sourcePathComponents.remove(atOffsets: IndexSet((indexRepositoryFolder+1)..<indexProductFolder))
+            }
         }
         var pathsComponents: [String] = sourcePathComponents.dropLast()
 
