@@ -58,7 +58,7 @@ class BarcodeDataTableViewCell: UITableViewCell, IdentifiableView {
         barcodeHeightConstraint = barcodeView.heightAnchor.constraint(equalToConstant: BarcodeStyle.height1D)
         barcodeHeightConstraint.priority = .defaultHigh
         let barcodeMaxHeightConstraint = barcodeView.heightAnchor.constraint(lessThanOrEqualTo: barcodeView.widthAnchor)
-        barcodeMaxHeightConstraint.priority = .required
+        barcodeMaxHeightConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([
             barcodeView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Style.vMargin),
             barcodeView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Style.vMargin),

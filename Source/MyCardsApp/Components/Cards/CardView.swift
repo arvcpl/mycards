@@ -26,7 +26,7 @@ class CardView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.appFont(ofType: .bold, size: .regular)
         label.textColor = UIColor.appText
-        label.adjustsFontSizeToFitWidth = true
+        label.adjustsFontSizeToFitWidth = false
         label.numberOfLines = 1
         label.textAlignment = .center
         return label
@@ -126,6 +126,11 @@ class CardView: UIView {
         case .large:
             nameLabel.font = UIFont.appFont(ofType: .bold, size: .large)
             nameLabel.sizeToFit()
+            if nameLabel.frameWidth + 2 * Style.hMargin > frameWidth {
+                var namelabelFrame = nameLabel.frame
+                namelabelFrame.size.width = frameWidth - 2 * Style.hMargin
+                nameLabel.frame = namelabelFrame
+            }
             nameCenterX.constant = -frameWidth / 2  + Style.hMargin + nameLabel.frameWidth / 2
             nameCenterY.constant = -frameHeight / 2  + Style.vMargin + nameLabel.frameHeight / 2
             layoutIfNeeded()

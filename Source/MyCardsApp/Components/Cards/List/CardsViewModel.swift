@@ -16,9 +16,15 @@ class CardsViewModel: ObservableObject {
         case active
         case searching(_ initialFrame: CGRect? = .none)
     }
+
+    public enum LoadState: Equatable {
+        case initial
+        case loading
+        case loaded
+    }
     
     @MainActor @Published private(set) var cardsGrouped = [CardsGroupViewModel]()
-    @MainActor @Published private(set) var isCardsLoading = false
+    @MainActor @Published private(set) var cardsLoadState = LoadState.initial
     @MainActor @Published var searchState = SearchState.inactive {
         didSet {
             if searchState != .searching() && query != nil {
@@ -27,19 +33,26 @@ class CardsViewModel: ObservableObject {
         }
     }
     
-    private var cellSizesCache = [Bool: CGSize]()
+    private var cellSizesCache = [String: CGSize]()
     
     private var query: String?
     
     var isSearching: Bool {
         return query != nil
     }
+
+    @MainActor
+    public init(cardsGrouped: [CardsGroupViewModel] = [], cardsLoadState: LoadState = .initial, searchState: SearchState = .inactive) {
+        self.cardsGrouped = cardsGrouped
+        self.cardsLoadState = cardsLoadState
+        self.searchState = searchState
+    }
     
     func load(query: String? = .none) throws {
         self.query = query
         Task.detached(priority: .userInitiated) {
             await MainActor.run {
-               self.isCardsLoading = true
+                self.cardsLoadState = .loading
             }
             let waitSeconds: UInt64 = 0
             try await Task.sleep(nanoseconds: waitSeconds * 1000000000)
@@ -64,7 +77,7 @@ class CardsViewModel: ObservableObject {
             
             await MainActor.run { [cardsGrouped] in
                 self.cardsGrouped = cardsGrouped
-                self.isCardsLoading = false
+                self.cardsLoadState = .loaded
             }
         }
     }
@@ -75,10 +88,11 @@ extension CardsViewModel {
     // MARK: - Cell Render
     func sectionCellSize(for section: Int, width: CGFloat) -> CGSize {
         let cardsGroup = cardsGrouped[section]
-        var cellSize = cellSizesCache[cardsGroup.recent]
+        let cellSizeKey = "\(cardsGroup.recent)_\(Int(width))"
+        var cellSize = cellSizesCache[cellSizeKey]
         if cellSize == nil {
             cellSize = CardsViewModel.cellSize(for: width, recent: cardsGroup.recent)
-            cellSizesCache[cardsGroup.recent] = cellSize
+            cellSizesCache[cellSizeKey] = cellSize
         }
         return cellSize ?? .zero
     }
