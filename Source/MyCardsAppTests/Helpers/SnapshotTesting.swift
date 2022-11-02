@@ -37,7 +37,6 @@ extension SnapshotTesting {
         }
     }
 
-
     func assertSnapshot<Value, Format>(
         matching value: @autoclosure () throws -> Value,
         as snapshotting: Snapshotting<Value, Format>,

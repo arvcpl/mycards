@@ -120,9 +120,8 @@ extension CardsViewModel {
     }
     
     func shouldDisplayHeaderTitle(for section: Int) -> Bool {
-        let shouldDisplaySearchField = section == 0
         let shouldDisplayTitle = cardsGrouped.count > 1
-        return shouldDisplaySearchField || shouldDisplayTitle
+        return shouldDisplayTitle
     }
     
     func shouldDisplayHeaderSearchField(for section: Int) -> Bool {
