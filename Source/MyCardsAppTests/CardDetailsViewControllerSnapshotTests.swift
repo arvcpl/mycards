@@ -81,24 +81,4 @@ final class CardDetailsViewControllerSnapshotTests: XCTestCase, SnapshotTesting 
         navigationController.loadViewIfNeeded()
         return navigationController
     }
-
-    private var testDevices: [Snapshotting<UIViewController, UIImage>] {
-        return [
-            .image(on: .iPhone13, precision: 0.99, traits: .init(userInterfaceStyle: .dark)),
-            .image(on: .iPhone13, precision: 0.99, traits: .init(userInterfaceStyle: .light)),
-            .image(on: .iPhoneSe, precision: 0.99, traits: .init(userInterfaceStyle: .dark)),
-            .image(on: .iPhoneSe, precision: 0.99, traits: .init(userInterfaceStyle: .light))
-        ]
-    }
-
-    private func assertSnapshot(
-        for viewController: UIViewController,
-        file: StaticString = #file,
-        testName: String = #function,
-        line: UInt = #line
-    ) {
-        testDevices.forEach { device in
-            assertSnapshot(matching: viewController, as: device, file: file, testName: testName, line: line)
-        }
-    }
 }

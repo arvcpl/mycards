@@ -14,6 +14,30 @@ protocol SnapshotTesting: XCTestCase {}
 
 extension SnapshotTesting {
 
+    private var testDevices: [Snapshotting<UIViewController, UIImage>] {
+        return [
+            .image(on: .iPhone13, precision: 0.99, traits: .init(userInterfaceStyle: .dark)),
+            .image(on: .iPhone13, precision: 0.99, traits: .init(userInterfaceStyle: .light)),
+            .image(on: .iPhoneSe, precision: 0.99, traits: .init(userInterfaceStyle: .dark)),
+            .image(on: .iPhoneSe, precision: 0.99, traits: .init(userInterfaceStyle: .light))
+        ]
+    }
+
+    func assertSnapshot(
+        for viewController: UIViewController,
+        record recording: Bool = false,
+        file: StaticString = #file,
+        testName: String = #function,
+        line: UInt = #line
+    ) {
+        testDevices.forEach { device in
+            viewController.view.layoutIfNeeded()
+            assertSnapshot(matching: viewController, as: device, record: recording,
+                           file: file, testName: testName, line: line)
+        }
+    }
+
+
     func assertSnapshot<Value, Format>(
         matching value: @autoclosure () throws -> Value,
         as snapshotting: Snapshotting<Value, Format>,
@@ -51,7 +75,8 @@ extension SnapshotTesting {
 
         if let indexProductFolder = sourcePathComponents.firstIndex(of: productName) {
             sourcePathComponents[indexProductFolder] = ciScriptsPathComponent
-            if let indexRepositoryFolder = sourcePathComponents.firstIndex(of: "repository") {
+            if let indexRepositoryFolder = sourcePathComponents.firstIndex(of: "repository"),
+                (indexRepositoryFolder + 1) < indexProductFolder {
                 sourcePathComponents.remove(atOffsets: IndexSet((indexRepositoryFolder+1)..<indexProductFolder))
             }
         }
